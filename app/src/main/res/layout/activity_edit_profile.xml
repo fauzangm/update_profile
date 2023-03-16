@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#252525">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clHeaderContainer"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/default_height"
+            android:background="@drawable/bg_primary_bottom_big_rounded"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/default_height"
+                android:layout_height="@dimen/default_height"
+                android:background="@android:color/transparent"
+                android:padding="@dimen/small_padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_round_arrow_back_white" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Update Profile"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/svContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clHeaderContainer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clInnerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llcFormDataDiriContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:text="Nama Lengkap *"
+                        android:textColor="@color/colorWhite" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etNamaLengkap"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:background="@drawable/bg_form_white_accent_border_rounded"
+                            android:hint="Nama Lengkap"
+                            android:imeActionLabel="Nama Lengkap"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:paddingStart="15dp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorGreyLight"
+                            android:textSize="@dimen/default_subtitle"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:text="Alamat *"
+                        android:textColor="@color/colorWhite" />
+
+                    <!--                            Perlu diubah-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="none"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAlamat"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:background="@drawable/bg_form_white_accent_border_rounded"
+                            android:hint="Alamat"
+                            android:imeActionLabel="Alamat"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/small_padding"
+                            android:singleLine="true"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorGreyLight"
+                            android:textSize="@dimen/default_subtitle"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:text="Umur *"
+                        android:textColor="@color/colorWhite" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundMode="none"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etUmur"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:background="@drawable/bg_form_white_accent_border_rounded"
+                            android:hint="Umur"
+                            android:imeActionLabel="Umur"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/small_padding"
+                            android:singleLine="true"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorGreyLight"
+                            android:textSize="@dimen/default_subtitle"
+                            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:text="Jenis Kelamin *"
+                        android:textColor="@color/colorWhite" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <RadioGroup
+                            android:id="@+id/rgJenisKelamin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RadioButton
+                                android:id="@+id/rbPerempuan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Perempuan"
+                                android:textColor="@color/colorWhite"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <RadioButton
+                                android:id="@+id/rbLaki"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Laki - Laki"
+                                android:textColor="@color/colorWhite"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/rbPerempuan"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:layout_editor_absoluteX="138dp" />
+                        </RadioGroup>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcEmailContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvEmailLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email *"
+                            android:textColor="@color/colorWhite" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tiEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxBackgroundMode="none"
+                            app:hintAnimationEnabled="false"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etMail"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/default_height"
+                                android:background="@drawable/bg_form_white_accent_border_rounded"
+                                android:hint="Email"
+                                android:imeActionLabel="Email"
+                                android:imeOptions="actionNext"
+                                android:maxLines="1"
+                                android:paddingTop="@dimen/small_padding"
+                                android:singleLine="true"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorGreyLight"
+                                android:textSize="@dimen/default_subtitle"
+                                tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcFormNoTelpContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvFormNoTelpLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/data_diri_form_no_telp_label"
+                            android:textColor="@color/colorWhite" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tiFormNoTelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxBackgroundMode="none"
+                            app:hintAnimationEnabled="false"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etNoTelp"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/default_height"
+                                android:background="@drawable/bg_form_white_accent_border_rounded"
+                                android:hint="@string/data_diri_form_no_telp_label"
+                                android:imeActionLabel="@string/data_diri_form_no_telp_label"
+                                android:imeOptions="actionDone"
+                                android:inputType="phone"
+                                android:maxLines="1"
+                                android:paddingTop="@dimen/small_padding"
+                                android:singleLine="true"
+                                android:textColor="@color/colorTitle"
+                                android:textColorHint="@color/colorGreyLight"
+                                android:textSize="@dimen/default_subtitle"
+                                tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <com.apachat.loadingbutton.core.customViews.CircularProgressButton
+                    android:id="@+id/btnUpdateProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/default_height"
+                    android:layout_marginHorizontal="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/xxl_margin"
+                    android:layout_marginBottom="@dimen/default_padding"
+                    android:background="@drawable/bg_btn_accent_rounded"
+                    android:text="Update Profile"
+                    android:textAllCaps="false"
+                    android:layout_margin="32dp"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llcFormDataDiriContainer"
+                    app:spinning_bar_color="@color/colorWhite"
+                    app:spinning_bar_padding="6dp"
+                    app:spinning_bar_width="4dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
